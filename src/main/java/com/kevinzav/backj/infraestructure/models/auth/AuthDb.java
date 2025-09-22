@@ -1,4 +1,4 @@
-package com.kevinzav.backj.infraestructure.models;
+package com.kevinzav.backj.infraestructure.models.auth;
 
 import jakarta.persistence.*;
 import lombok.*;

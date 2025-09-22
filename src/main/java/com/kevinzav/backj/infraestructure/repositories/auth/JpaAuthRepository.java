@@ -1,9 +1,9 @@
-package com.kevinzav.backj.infraestructure.repositories;
+package com.kevinzav.backj.infraestructure.repositories.auth;
 
-import com.kevinzav.backj.domain.models.Auth;
-import com.kevinzav.backj.domain.repositories.AuthRepository;
-import com.kevinzav.backj.infraestructure.mappers.AuthMapper;
-import com.kevinzav.backj.infraestructure.models.AuthDb;
+import com.kevinzav.backj.domain.models.auth.Auth;
+import com.kevinzav.backj.domain.repositories.auth.AuthRepository;
+import com.kevinzav.backj.infraestructure.mappers.auth.AuthMapper;
+import com.kevinzav.backj.infraestructure.models.auth.AuthDb;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
@@ -19,17 +19,17 @@ public class JpaAuthRepository implements AuthRepository {
     @Override
     public Optional<Auth> findByUsername(String username) {
         Optional<AuthDb> data = jpa.findByUsername(username);
-        if (!data.isPresent()) {
+        if (data.isEmpty()) {
             return Optional.empty();
         }
-        return data.map(AuthMapper::dataToEntity);
+        return data.map(AuthMapper.INSTANCE::dataToEntity);
     }
 
     @Override
     public Auth save(Auth auth) {
-        AuthDb data = AuthMapper.entityToData(auth);
+        AuthDb data = AuthMapper.INSTANCE.entityToData(auth);
         AuthDb authSaved = jpa.save(data);
 
-        return AuthMapper.dataToEntity(authSaved);
+        return AuthMapper.INSTANCE.dataToEntity(authSaved);
     }
 }

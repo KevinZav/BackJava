@@ -1,6 +1,6 @@
-package com.kevinzav.backj.domain.repositories;
+package com.kevinzav.backj.domain.repositories.auth;
 
-import com.kevinzav.backj.domain.models.Auth;
+import com.kevinzav.backj.domain.models.auth.Auth;
 
 import java.util.Optional;
 

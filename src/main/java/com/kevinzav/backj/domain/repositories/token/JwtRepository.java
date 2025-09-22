@@ -1,4 +1,4 @@
-package com.kevinzav.backj.domain.repositories;
+package com.kevinzav.backj.domain.repositories.token;
 
 public interface JwtRepository {
     String generate(String username);

@@ -1,8 +1,8 @@
-package com.kevinzav.backj.application;
+package com.kevinzav.backj.application.auth;
 
-import com.kevinzav.backj.domain.models.Auth;
-import com.kevinzav.backj.domain.repositories.AuthRepository;
-import com.kevinzav.backj.domain.repositories.JwtRepository;
+import com.kevinzav.backj.domain.models.auth.Auth;
+import com.kevinzav.backj.domain.repositories.auth.AuthRepository;
+import com.kevinzav.backj.domain.repositories.token.JwtRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Optional;

@@ -1,6 +1,7 @@
-package com.kevinzav.backj.web;
+package com.kevinzav.backj.web.auth;
 
-import com.kevinzav.backj.application.AuthService;
+import com.kevinzav.backj.application.auth.AuthService;
+import com.kevinzav.backj.infraestructure.models.auth.AuthDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -15,14 +16,14 @@ public class AuthController {
     }
 
     @PostMapping("/sign")
-    public String sign(@RequestParam String username, @RequestParam String password) {
-        return authService.sign(username, password)
+    public String sign(@RequestBody AuthDto authDto) {
+        return authService.sign(authDto.getUsername(), authDto.getPassword())
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "USER_EXISTS"));
     }
 
     @PostMapping("/login")
-    public String login(@RequestParam String username, @RequestParam String password) {
-        return authService.login(username, password)
+    public String login(@RequestBody AuthDto authDto) {
+        return authService.login(authDto.getUsername(), authDto.getPassword())
                 .orElseThrow(()-> new ResponseStatusException(HttpStatus.UNAUTHORIZED,"LOGIN_ERROR"));
     }
 }

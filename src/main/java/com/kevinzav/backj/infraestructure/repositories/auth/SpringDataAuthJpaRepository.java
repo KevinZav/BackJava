@@ -1,6 +1,6 @@
-package com.kevinzav.backj.infraestructure.repositories;
+package com.kevinzav.backj.infraestructure.repositories.auth;
 
-import com.kevinzav.backj.infraestructure.models.AuthDb;
+import com.kevinzav.backj.infraestructure.models.auth.AuthDb;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

@@ -1,6 +1,6 @@
-package com.kevinzav.backj.infraestructure.repositories;
+package com.kevinzav.backj.infraestructure.repositories.token;
 
-import com.kevinzav.backj.domain.repositories.JwtRepository;
+import com.kevinzav.backj.domain.repositories.token.JwtRepository;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
